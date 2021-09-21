@@ -1,22 +1,26 @@
+import java.util.Scanner;
+
 class BooleanTesting{
 
     public static void main(String[] args){
 
+        Scanner sc = new Scanner(System.in);
+        int a, b;
+
+        a = sc.nextInt();
+        b = sc.nextInt();
+
         boolean bool = false;
 
-        System.out.println(bool);
 
-        bool = true;
+        if (a > b) {
 
-        System.out.println(bool);
-
-        if (bool) {
-            System.out.println("Hi))");
+            bool = true;
+            System.out.println(bool);
         }
-        bool = false;
+        else {
+            System.out.println(bool);
 
-        if (!bool) {
-            System.out.println("Damn");
         }
 
 

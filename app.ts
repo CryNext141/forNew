@@ -1,3 +1,5 @@
+//Коли я починав писати цей код,то зімною був мій розум і Бог...Тепер,тут тільки моя шиза o_0
+
 import { exit } from 'process';
 import * as scanner from 'readline-sync';
 

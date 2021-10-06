@@ -58,6 +58,6 @@ function calc(cYear: number, cMonth: number, bYear: number, bMonths: number): nu
 }
 
 function cons(months: number) {
-    console.log(months);
+    console.log("You lived for " +months+ " months");
 }
 

@@ -1,4 +1,4 @@
-//Коли я починав писати цей код,то зімною був мій розум і Бог...Тепер,тут тільки моя шиза o_0
+//Коли я починав писати цей код,то зімною був мій розум,Паша і Бог...Тепер,тут тільки моя шиза o_0
 
 import { exit } from 'process';
 import * as scanner from 'readline-sync';
@@ -18,37 +18,11 @@ let bYear = +bDaySp[2];
 let bMonths = +bDaySp[1];
 let day = +bDaySp[0];
 
+check(day,bMonths,bDaySp[2]);
 
-    if (day > 30 || bMonths > 12 || bDaySp[2].length > 4) {
+let choos: string="";
 
-    console.log("Invalid date");
-    exit();
-
-    }
-
-
-
-let choos: string = scanner.question('You want to enter the second date manually?, write "Y" or "N"\r\n');
-
-
-if (choos === 'Y' || choos === 'y') {
-
-    let date2: string = scanner.question('Enter the date you want, xx.xx.xxxx\r\n');
-    let cDay: string = date2;
-
-    let cDaySp: string[] = cDay.split('.', 3);
-    currentYear = +cDaySp[2];
-    currentMonths = +cDaySp[1];
-    let day1 = +cDaySp[0]
-
-     if (day1 > 30 || currentMonths > 12 || cDaySp[2].length > 4) {
-
-         console.log("Invalid date");
-         exit();
-
-     }
-
-}
+type();
 
 cons(calc(currentYear, currentMonths, bYear, bMonths));
 
@@ -58,6 +32,44 @@ function calc(cYear: number, cMonth: number, bYear: number, bMonths: number): nu
 }
 
 function cons(months: number) {
-    console.log("You lived for " +months+ " months");
+    console.log("You lived for " + months + " months");
 }
 
+function check(day: number, months:number, year:string) {
+
+
+    if (day > 30 || months > 12 || year.length > 4) {
+
+        console.log("Invalid date");
+        exit();
+
+    }
+
+}
+
+function type() {
+    choos = scanner.question('You want to enter the second date manually?, write "Y" or "N"\r\n');
+
+    repeat(choos.toLowerCase());
+}
+
+function repeat(choos: string) {
+    if (choos === 'y') {
+
+        let date2: string = scanner.question('Enter the date you want, xx.xx.xxxx\r\n');
+        let cDay: string = date2;
+
+        let cDaySp: string[] = cDay.split('.', 3);
+        currentYear = +cDaySp[2];
+        currentMonths = +cDaySp[1];
+        let day1 = +cDaySp[0]
+
+        check(day1, currentMonths, cDaySp[2]);
+
+    } else if (choos === "n") {
+
+    } else {
+        console.log("type something");
+        type();
+    }
+}
